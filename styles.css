@@ -373,6 +373,9 @@ section {
     justify-content: space-evenly;
     align-items: center;
     border-bottom: none;
+    padding: 10px;
+    height: 100px; /* Default height */
+    transition: height 0.3s ease;
 }
 
 .png-button {
@@ -553,6 +556,18 @@ section {
         padding: 10px;
     }
 
+    .section-four {
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px; 
+        height: 60px; 
+    }
+
+    .png-button, .memo-button {
+        width: 50px; 
+        height: 50px;
+    }
+
     .circle-button {
         width: 35px;
         height: 35px;
@@ -582,6 +597,11 @@ section {
         flex-direction: column;
     }
 
+    .section-four {
+        height: 10px; /* Further reduce height */
+        gap: 5px; /* Reduce spacing further for very small screens */
+    }
+
     h2, h3 {
         font-size: 16px;
         text-align: center;
@@ -593,9 +613,10 @@ section {
         font-size: 10px;
     }
 
-    .png-button {
-        width: 30px;
+    .png-button, .memo-button {
+        width: 30px; 
         height: 30px;
+        align-items: center;
     }
 
     .middle-title {
@@ -610,7 +631,6 @@ section {
 
 
 textarea {
-    font-size: 16px; /* Reduce font size for smaller screens */
+    font-size: 16px; 
 }
-
 
