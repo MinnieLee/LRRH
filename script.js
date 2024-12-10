@@ -13,7 +13,6 @@
         menuList.style.display = 'none'; // Hide the list
     });
 
-    // Close the menu list-outside 
     window.addEventListener('click', (e) => {
         if (e.target === menuList) {
             menuList.style.display = 'none'; // Hide the list
@@ -67,10 +66,9 @@
             }
         });
     
-        // Add click event to the quizButton for displaying the notification
+        // notification text(Take QUIZ)
         quizButton.addEventListener('click', () => {
             if (notificationChanged) {
-                // Create and style the notification text dynamically
                 const notificationText = document.createElement('div');
                 notificationText.textContent = 'Take a Quiz!';
                 Object.assign(notificationText.style, {
@@ -88,10 +86,10 @@
                     textAlign: 'center',
                 });
     
-                // Append the notification text to the document body
+                
                 document.body.appendChild(notificationText);
     
-                // Remove the notification after 3 seconds
+               
                 setTimeout(() => {
                     document.body.removeChild(notificationText);
                 }, 3000);
@@ -125,7 +123,7 @@
             return;
         }
     
-        // Menu Button Functionality
+        // Menu Button 
         menuButton.addEventListener('click', () => {
             const menuList = document.getElementById('menu-list');
             if (menuList) {
@@ -135,7 +133,7 @@
             }
         });
     
-        // Back Button Functionality
+        // Back Button 
         backButton.addEventListener('click', () => {
             if (currentIndex > 0) {
                 currentIndex--;
@@ -144,7 +142,7 @@
             }
         });
     
-        // Next Button Functionality
+        // Next Button
         nextButton.addEventListener('click', () => {
             if (currentIndex < pageSequence.length - 1) {
                 currentIndex++;
@@ -154,6 +152,26 @@
         });
     });
     
-    
+    // button sizes on smaller screens
+window.addEventListener('resize', () => {
+    const width = window.innerWidth;
+
+    document.querySelectorAll('.circle-button').forEach((button) => {
+        if (width < 500) {
+            button.style.width = '30px';
+            button.style.height = '30px';
+            button.style.fontSize = '10px';
+        } else if (width < 780) {
+            button.style.width = '35px';
+            button.style.height = '35px';
+            button.style.fontSize = '12px';
+        } else {
+            button.style.width = '50px';
+            button.style.height = '50px';
+            button.style.fontSize = '16px';
+        }
+    });
+});
+
     
     
